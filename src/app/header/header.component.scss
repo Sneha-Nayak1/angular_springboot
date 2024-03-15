@@ -1,0 +1,15 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  span{
+    margin-left:500px;
+    font-size:27px;
+  }
+
+  .main{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 550px; 
+  }

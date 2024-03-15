@@ -1,0 +1,59 @@
+<h1 mat-diaog-title>Add your expense details </h1>
+<div mat-diaog-content>
+    <form [formGroup]="details">
+
+          <!-- <mat-form-field appearance="fill">
+            <mat-label >Expense Type</mat-label>
+            <mat-select formControlName="productType" placeholder="Select the Expense type">
+              <mat-option value="Housing">Housing</mat-option>
+                <mat-option value="Health">Health</mat-option>
+                <mat-option value="Travelling">Travelling</mat-option>
+                <mat-option value="Entertainment">Entertainment</mat-option>
+            </mat-select>
+          </mat-form-field> -->
+
+      
+            <mat-form-field appearance="fill">
+              <mat-label>Expense Type</mat-label>
+              <mat-select formControlName="productType" placeholder="Select the Expense type">
+                <mat-option value="Housing">Housing</mat-option>
+                <mat-option value="Health">Health</mat-option>
+                <mat-option value="Travelling">Travelling</mat-option>
+                <mat-option value="Entertainment">Entertainment</mat-option>
+              </mat-select>
+            </mat-form-field>
+        
+          
+
+          <mat-form-field appearance="fill">
+            <mat-label>Expense Name</mat-label>
+            <input formControlName="productName" matInput placeholder="Expense name">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Date</mat-label>
+            <input formControlName="date" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+
+          <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input formControlName="price" matInput type="number"placeholder="Price">
+        </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Any Information</mat-label>
+             <textarea formControlName="content" matInput></textarea>
+        </mat-form-field>
+    </form>
+    
+      
+</div>
+
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="basic" mat-dialog-close>Close</button>
+    <button style="margin-left:8px; " mat-raised-button color="primary" (click)="addExpense()">{{actionBtn}} </button>
+  </div>
