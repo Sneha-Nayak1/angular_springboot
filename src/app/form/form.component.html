@@ -30,6 +30,12 @@
             <input formControlName="productName" matInput placeholder="Expense name">
           </mat-form-field>
 
+
+          
+          
+         
+
+          
           <mat-form-field appearance="fill">
             <mat-label>Date</mat-label>
             <input formControlName="date" matInput [matDatepicker]="picker">
@@ -52,8 +58,11 @@
       
 </div>
 
+<!-- <mat-form-field appearance="fill" >
+  <mat-label  #message >Message</mat-label>
+</mat-form-field> -->
 
 <div mat-dialog-action [align]="'end'">
-    <button mat-raised-button color="basic" mat-dialog-close>Close</button>
+    <button mat-raised-button color="basic" mat-dialog-close >Close</button>
     <button style="margin-left:8px; " mat-raised-button color="primary" (click)="addExpense()">{{actionBtn}} </button>
   </div>

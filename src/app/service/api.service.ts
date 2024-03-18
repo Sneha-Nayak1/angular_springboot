@@ -5,11 +5,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  private url='http://localhost:8080/api/expenses';
+  private url='http://localhost:8080/api/expense';
   constructor(public http:HttpClient) { }
 
   getExpenses(){
-    return this.http.get(`${this.url}`);
+    return this.http.get<any>(`${this.url}`);
   }
    
   postExpense(data:any){

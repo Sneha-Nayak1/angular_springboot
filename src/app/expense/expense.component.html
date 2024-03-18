@@ -1,2 +1,36 @@
-<button mat-button color="primary" (click)="openDialog()">Add Your Expense</button>
+<body>
+  <h1 class="arrow"> Click here to add Expense Details --><mat-icon class="addProduct" (click)="openDialog()">add_circle</mat-icon></h1>
 
+
+
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+<mat-accordion style="color:white">
+  <mat-expansion-panel class="main" style="color:white" *ngFor="let row of dataSource.data">
+    <mat-expansion-panel-header>
+      <mat-panel-title style="font-size:18px; ">
+      <strong style="color:white"> Expense type:  {{row.productType}}</strong>
+      </mat-panel-title>
+      <mat-panel-description >
+        <p style="color:white;">Details of the Expenses</p>>
+      </mat-panel-description>
+    
+    </mat-expansion-panel-header>
+    <p >Expense Name: {{row.productName}} </p>
+    <br>
+    <p>Date: {{row.date | date}} </p>
+    <br>
+    <p>Price: {{row.price | currency}} </p>
+    <br>
+    <p>Content: {{row.content}} </p>
+    <br>
+    <mat-icon (click)="deleteExpense(row.id)">delete</mat-icon>
+    <mat-icon (click)="updateExpense(row)">edit</mat-icon>
+  </mat-expansion-panel>
+</mat-accordion>
+<br>
+<br>
+<h2 class="expenditure">Expenditure :  {{ totalSum | currency }}</h2>
+</body>

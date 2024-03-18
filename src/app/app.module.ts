@@ -22,6 +22,13 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SnackbarComponent } from './snackbar/snackbar.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import { ContentComponent } from './content/content.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -32,7 +39,9 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     ExpenseComponent,
     ContactComponent,
-    FormComponent
+    FormComponent,
+    SnackbarComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +58,12 @@ import { FormsModule } from '@angular/forms';
     MatNativeDateModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

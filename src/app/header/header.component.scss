@@ -3,8 +3,8 @@
   }
 
   span{
-    margin-left:500px;
-    font-size:27px;
+    margin-left:550px;
+    font-size:40px;
   }
 
   .main{
@@ -12,4 +12,12 @@
     justify-content: space-between; 
     align-items: center; 
     padding: 0 550px; 
+    background-color: black;
+    opacity:0.7;
+  }
+
+  .main div a{
+    text-decoration: none;
+    color:white;
+    
   }

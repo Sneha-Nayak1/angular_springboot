@@ -1,8 +1,7 @@
 .img {
     position: absolute;
-    height:500px;
-    width:500px;
-    margin-left: 850px;
+    height:556px;
+    width:100%;
     z-index: -1;
   }
   
@@ -14,5 +13,24 @@
 //   .full{
 //     display:flex;
 //   }
+
+.title{
+  text-align: center;
+  font-family:'Snell Roundhand, cursive';
+  font-size: 65px;
+  padding-bottom:15px;
+ 
+}
+
+.box1{
+  background-color: black;
+  color:white;
+  margin-left:200px;
+  margin-right:200px;
+ opacity:0.7;
+ padding:50px 100px 50px 100px;
+ border: 2px solid rgb(170, 219, 231);
+ border-radius: 50px;
+}
 
   
