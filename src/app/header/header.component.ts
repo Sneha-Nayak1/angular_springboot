@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   openDialog() {
     this.dialog.open(FormComponent, {
       width:"30%",
-      height:'80%'
+      height:'100%'
     })
   }
 }

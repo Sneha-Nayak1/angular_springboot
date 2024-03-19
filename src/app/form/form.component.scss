@@ -1,3 +1,44 @@
-mat-form-field{
-    width:100%
-}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    
+    // padding: 16px;
+    
+    
+  }
+  
+ 
+  mat-form-field {
+    width: 100%;
+    background-color:rgb(170, 219, 231);
+    
+    
+  
+  }
+  
+
+  h1.mat-dialog-title {
+    color: #333;
+    font-size: 24px;
+    padding-top:10px;
+    margin-bottom: 16px;
+    
+  }
+  
+
+  div.mat-dialog-actions {
+    justify-content: flex-end;
+    padding: 8px 16px;
+  }
+ 
+  button.mat-raised-button {
+    min-width: 120px;
+    background-color:rgb(170, 219, 231);
+    margin-top:10px;
+    border:solid black 2px;
+    color:black;
+    margin-bottom: 10px;
+  }
+  

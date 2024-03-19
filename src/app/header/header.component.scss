@@ -5,9 +5,17 @@
   span{
     margin-left:550px;
     font-size:40px;
+    text-decoration: done;
+  }
+
+  .title{
+    text-decoration: none;
   }
 
   .main{
+    height:40px;
+    font-size: 20px;
+
     display: flex;
     justify-content: space-between; 
     align-items: center; 

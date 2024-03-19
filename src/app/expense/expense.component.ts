@@ -7,7 +7,8 @@ import { ApiService } from '../service/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ContentComponent } from '../content/content.component';
 import { FormComponent } from '../form/form.component';
-import { NgForm } from '@angular/forms';
+import { NgForm, Validators } from '@angular/forms';
+import { FormGroup,FormControl, Validator } from '@angular/forms';
 
 
 @Component({
@@ -22,9 +23,15 @@ import { NgForm } from '@angular/forms';
 export class ExpenseComponent implements OnInit {
 
   totalSum: number = 0;
-  income: number = 0;
-  savedAmount: number = 0;
+  totalincome!:number;
+  saving: number=0;
   data:any;
+  
+
+
+  submitIncome= new FormGroup({
+    income: new FormControl('',[Validators.pattern('[0-9]+')])
+  })
   displayedColumns: string[] = ['productType', 'productName', 'date', 'price', 'content'];
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   ;
@@ -57,7 +64,8 @@ export class ExpenseComponent implements OnInit {
     this.api.getExpenses().subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
-        this.sum();
+        this.expenditure();
+       
       },
       error: () => {
         alert("Error fetching data");
@@ -91,12 +99,25 @@ export class ExpenseComponent implements OnInit {
     )
   }
 
-  sum() {
+  expenditure() {
     this.totalSum = this.dataSource.data.reduce((total, current) => total + current.price, 0);
+     this.saved();
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  income(){
+   this.totalincome=this.submitIncome.value.income;
+   this.saved();
   }
+
+
+  saved(){
+    
+    if (this.totalincome !== undefined && this.totalSum !== undefined && this.totalSum<this.totalincome) {
+      
+    this.saving=this.totalincome-this.totalSum;
+    }
+  }
+
+
+  
 }
